@@ -2,3 +2,21 @@
     display: flex;
     position: absolute;
 }
+
+#canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+#input-container, h1, h3 {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+body {
+    background-color: lightgrey;
+}

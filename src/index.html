@@ -21,16 +21,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>PDF upload and annotate</title>
 </head>
 
 <body>
+    <h1>Upload PDF to Annotate</h1>
+    <h3>Click and Drag to Annotate</h3>
     <!-- <div id="upload"></div>
     <input type="file" id="input" accept="application/pdf" /> -->
-    <div>
-        <input type="file" id="input" accept="application/pdf" />
+    <div id="input-container">
+        <input type="file" id="input" accept="application/pdf" value="Upload PDF" />
+        <button id="print-button">Print</button>
     </div>
-    <div>
+    <div id="canvas-container">
         <canvas id='canvas'></canvas>
         <div id="upload"></div>
     </div>
@@ -38,12 +41,18 @@
     <script type="text/javascript" src="index.js"></script>
 </body>
 <script>
+    // For uploading pdf to img
     var input = document.getElementById('input');
     var upload = document.getElementById('upload');
     input.addEventListener('change', function (e) {
         var file = e.target.files[0];
         var preview = URL.createObjectURL(file);
         upload.innerHTML = '<img src="' + preview + '" />';
+    });
+
+    // For printing
+    document.getElementById('print-button').addEventListener('click', function(e) {
+    	window.print();
     });
 </script>
 
