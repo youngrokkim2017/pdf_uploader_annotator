@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF</title>
+</head>
+<body>
+    <canvas id="canvas-container" width="500" height="500" style="border:1px solid #000;"></canvas>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="upload"></div>
+    <input type="file" id="input" accept="application/pdf" /> -->
+    <div>
+        <input type="file" id="input" accept="application/pdf" />
+    </div>
+    <div>
+        <canvas id='canvas'></canvas>
+        <div id="upload"></div>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+<script>
+    var input = document.getElementById('input');
+    var upload = document.getElementById('upload');
+    input.addEventListener('change', function (e) {
+        var file = e.target.files[0];
+        var preview = URL.createObjectURL(file);
+        upload.innerHTML = '<img src="' + preview + '" />';
+    });
+</script>
+
+</html>
